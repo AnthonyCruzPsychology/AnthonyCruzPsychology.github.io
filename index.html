@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style>
+
+            body {background-color: #F5F5F5;}
+
+            #container{
+                display: flex;
+                flex-wrap: wrap;
+                height: 500px;
+                width:100%;
+                margin-top: 25px;
+                /* margin-bottom: 100px; */
+                justify-content: center;
+                align-items: flex-start;
+                gap: 30px;
+            }
+
+            #sidebar {
+                display: flex;
+                width: 380px;
+                gap: 2%;
+                /* height: 100%; */
+                height: min-content;
+                padding: 2% 0;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid #000;
+                background: #FFF;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+
+                img {
+                    /* width: 120px; */
+                    /* height: 120px; */
+                    width: 50%;
+                    flex-shrink: 0;
+                    border: 1px solid black;
+                    border-radius: 50%;
+                    margin-bottom: 2%;
+                }
+
+                #description {
+                    display: flex;
+                    width: 100%;
+                    gap:0;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: baseline;
+                    align-content: center;
+                    text-align: center;
+                    color: #000;
+                    text-align: center;
+                }
+
+                    #description h1 {
+                        font-family: sans-serif;
+                        width:100%;
+                        text-align: center;
+                        font-size: 40px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height:38px;
+                        /* margin-block-start: 0; */
+                        margin-block: 0;
+                    }
+
+                    #description p {
+                        margin-block-start: 0;
+                        width: 100%;
+                        /* display:flex; */
+                        color: #807F83;
+                        text-align: center;
+                        font-family: sans-serif;
+                        font-size: 32px;
+                        /* font-style: normal; */
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                    #description a {
+                        margin-block-start: 0;
+                        width: 100%;
+                        /* display:flex; */
+                        color: #807F83;
+                        text-align: center;
+                        font-family: sans-serif;
+                        font-size: 24px;
+                        /* font-style: normal; */
+                        font-weight: 400;
+                        text-decoration: none;
+                        line-height: normal;
+                    }
+
+                    #description a:hover {
+                        text-decoration: underline;
+                    }
+
+                #connect {
+                    display: flex;
+                    flex-direction:row;
+                    -ms-flex-align: center;
+                    height: 100px;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 22px;
+                    flex-shrink: 0;
+                    text-align: center;
+                }
+
+                    /* #connect p {
+                        transform:  rotate(-90deg);
+                        color: #000;
+                        text-align: center;
+                        font-family: sans-serif;
+                        font-size: 32px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        border-bottom: 1px solid black;
+                        width: min-content;
+                        height: min-content;
+                        text-wrap: nowrap;
+                        margin-block: 0;
+                    } */
+
+                    #contactLinks {
+                        /* transform: translateX(-25%); */
+                        display: flex;
+                        flex-direction: row;
+                        justify-content:space-evenly;
+                        /* align-items: center; */
+                        align-items: flex-start;
+                        gap: 2%;
+                        width: 100%;
+                        /* height: 185px; */
+                    }
+
+                    .contact {
+                            width: 22%;
+                            /* height: 44px; */
+                            flex-shrink: 0;
+                            border: 1px solid #000;
+                            background: rgba(79, 38, 131, 0.20);
+                            /* color: #807F83; */
+                            color: black;
+                            text-align: center;
+                            font-family: sans-serif;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                            padding: 2%;
+                            /* cursor: pointer; */
+                        }
+
+                        .contact:hover {
+                                text-decoration: underline;
+                            }
+
+            #dropdown {
+                display: flex;
+                width: 605px;
+                min-width: min-content;
+                height: 100%;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 7%;
+                /* padding-bottom: 100px; */
+            }
+
+                .option {
+                    width: 100%;
+                    /* height: 19%; */
+                    height: min-content;
+                    flex-shrink: 0;
+                    border: 2px solid #000;
+                    background: #FFF;
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                    color: #000;
+                    text-align: center;
+                    vertical-align: top;
+                    font-family: sans-serif;
+                    font-size: 40px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    padding: 2% 0;
+                    /* cursor: pointer; */
+                }
+
+                .optionDropdown {
+                    /* display: none; */
+                    font-family: sans-serif;
+                    font-size: 16px;
+                }
+
+                .optionDropdown h1 {
+                    text-align: center;
+                }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="container">
+
+            <div id="sidebar">
+                <img src="./img.jpg">
+                <div id="description">
+                    <h1>Anthony Cruz</h1>
+                    <p>PhD Student</p>
+                    <a href="https://mindalab.com/" target="_blank">The Minda Lab,</a>
+                    <a href="https://psychology.uwo.ca/" target="_blank">University of Western Ontario</a>
+                </div>
+                <div id="connect">
+                    <div id="contactLinks">
+                        <div class ="contact">Email</div>
+                        <div class ="contact" id="linkedIn">LinkedIn</div>
+                        <div class ="contact" id="mastodon">Mastodon</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dropdown">
+                <div class="option" id = "about">About Me</div>
+                <div class="optionDropdown" id="aboutDropdown">
+                    I am a PhD student at Western University (London, Ontario). I study Psychology in the <em>Cognitive, Developmental, and Brain Sciences</em> stream. I joined Western in September 2020 under the supervision of Dr. John Paul Minda. I defended my MSc in 2022 and aim to defend my dissertation in 2026. I received my BA in Psychology and Mathematics from Ohio University in 2020.
+                    <br><br>
+                    <a href = "resources/CruzAnthonyCV_Dec2023.pdf" target="_blank">Click here for a copy of my CV (last updated December 2023).</a>
+                    <br>
+                    See below to learn more about my work.
+                </div>
+
+                <div class="option" id = "research">My Research</div>
+                <div class="optionDropdown" id="researchDropdown">
+                    I study categorization, the cognitive process by which we sort stimuli into groups (categories) based on shared features. Categorization makes it easier to understand the world around us, breaking it down into bite-sized chunks. We are always putting things into categories, consciously and unconsciously, but we aren't born knowing how to do this. We learn categories throughout our lifetimes. I'm interested in this learning process. Specifically, I'm interested in factors that benefit this learning process, especially for complex categories. I approach my work using a mix of behvioral and computaitonal methods.
+                    <br><br>
+                    While working toward my MSc in the midst of the COVID-19 pandemic, I designed a smartphone-based categorization task. Using this task, I assessed the potency of a spaced learning paradigm for supporting the learning of implicit categories. Participants in my study learned in either one 90-minute training session or a series of 5 to 7-minute training sessions over the course of several days. Those who completed the short, repeated training sesisons learned more effectively. In a follow-up study, we demonstrated that, at test, this effect was driven by stronger performance on previously-seen stimuli, suggesting that spacing made it easier to retrieve information from memory.
+                    <br><br>
+                    My current work examines category learning through the lens of metacognition ("thinking about thinking") and classical decision theory. 
+                </div>
+
+                <div class="option" id = "presentations">Presentations</div>
+                <div class="optionDropdown" id="presentationsDropdown">
+
+                    <h1>Talks</h1>
+                    <strong>Cruz, A.</strong> (2023, October 3). Harnessing smartphone power: A breakthrough approach to medical diagnostic category learning. <em>Centre for Education Research and Innovation (CERI) 2023 Research Symposium</em>, London, ON.
+                    <br><br>
+                    <strong>Cruz, A.</strong> & Minda, J. P. (November 2022). Sorry, I Can’t Talk Right Now: Category Learning on the Go. <em>Talk presented at the 63rd annual meeting of the Psychonomic Society</em>, Boston, MA.
+                    <br><br>
+
+                    <h1>Posters</h1>
+                    <strong>Cruz, A.</strong> & Minda, J. P. (2023, November 17-19). Give Me a Break: Pausing to Reflect May Lessen Attention Attenuation in Massed Learning. <em>Poster presented at the 64th Annual Meeting of the Psychonomic Society</em>, San Francisco, CA.
+                    <br><br>
+                    <strong>Cruz, A.</strong> & Minda, J. P. (2023, July 17-19). PRaM-Scaping: Efficient Similarity Data Collection through Trial Reduction. <em>Poster presented at the 33rd Annual Meeting of the Canadian Society for Brain, Behavior, and Cognitive Science (CSBBCS)</em>, Guelph, ON.
+                    <br><br>
+                    <strong>Cruz, A.</strong>, Saulnier, K. G., Huet, A. & Allan, N. P. (May 2020). Attentional control as a potential mechanism linking worry and error monitoring: An event-related potential study. <em>Poster presented at the annual meeting of the Cognitive Neuroscience Society (CNS) 2020</em>, Virtual.
+                    <br><br>
+                    <strong>Cruz, A.</strong> (July 2019). Understanding patterns of interlock use based on failure times, failure rates, invalid test rates, and rolling retest rates. <em>Poster presented at the University of Missouri Summer Undergraduate Research & Creative Achievements Forum</em>, Columbia, MO.
+                    <br><br>
+                    <strong>Cruz, A.</strong> & Sharrock, A. (April 2018). National suicide trends and suicide trends in Southeast Ohio. <em>Poster presented at the Ohio University Student Research and Creativity Expo</em>, Athens, OH.
+                    <br><br>
+
+                    <h1>Workshops</h1>
+                    Kalra, P. & <strong>Cruz, A.</strong> (2023, December 1-3). Modern Realities of Behavioural Research. <em>Talked presented at Western University BrainHack</em>, London, ON.
+                    <br><br>
+                    Kalra, P. & <strong>Cruz, A.</strong> (2022, November 30-2). Modern Realities of Behavioural Research. <em>Talked presented at Western University BrainHack</em>, London, ON.
+
+                </div>
+
+                <!-- <div class="option" id = "teaching">Teaching Philosophy</div>
+                <div class="optionDropdown" id="teachingDropdown">
+                    I have worked as a private mathematics and statistics tutor since 2018, covering verything from Grade 7 math to University calculus. At Ohio University, I ran supplemental instruction sessions. At Western University, I have served as a teaching assistant for both undergraduate- and graduate-level courses. See my CV for a comprehensive list of courses that I have taught.
+                    <br><br>
+                    Having taught various age groups and topics, I have had my teaching philosophy tried and tested. I believe in a lifelong process of learning. I encourage students to think critically and challenge themselves, providing constructive feedback to help them identify ways they can improve their work. As an instructor, I believe being friendly and approachable is critical to ensure that my students feel comfortable asking me for help.
+                </div> -->
+
+                <div class="option" id = "code">Code</div>
+                <div class="optionDropdown" id="codeDropdown" style="padding-bottom: 100px;">
+                    <h1>Random Response Simulator</h1>
+                    <br>
+                    During a feedback-based category learning study, participants are often expected to use a random guessing strategy to make their decisions early in the task. However, some participants never stop random guessing. By the end of the task, it is important to dissociate random guessers from learners. How well could a random guesser be expected to perform? This question is highly dependent on task design. My random response simulator predicts the highest level of achievement that a random guesser should reasonable be able to achieve.
+                    <br>
+                    <a href = "https://anthonycruz.shinyapps.io/category-learning-sim/?_ga=2.21603835.1523995509.1646692810-1695429528.1646692810" target="_blank">Click here to access.</a>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+
+            // Contact Options
+            const contacts = document.querySelectorAll('.contact');
+            contacts.forEach(contact => {
+                contact.addEventListener('mouseover', function handleHover(event) {
+                    console.log('contact clicked', event);
+                    contact.setAttribute('style', 'cursor: pointer; background: rgba(79, 38, 131, 0.10);');
+                });
+                contact.addEventListener('mouseout', function handleStoppedHover(event) {
+                    contact.setAttribute('style', 'background: rgba(79, 38, 131, 0.20);');
+                });
+            });
+            document.getElementById("mastodon").addEventListener("click", () => {
+                window.location = 'https://mastodon.social/@anthonycruz';
+            });
+            document.getElementById("linkedIn").addEventListener("click", () => {
+                window.location = 'https://www.linkedin.com/in/anthony-cruz-msc-06922b169/';
+            });
+
+
+            // Dropdown Options
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+
+                option.addEventListener('mouseover', function handleHover(event) {
+                    console.log('Hovered over option.', event);
+                    option.setAttribute('style', 'cursor: pointer; text-decoration: underline;');
+                });
+                option.addEventListener('mouseout', function handleStoppedHover(event) {
+                    option.setAttribute('style', 'text-decoration: none;');
+                });
+
+                option.addEventListener('click', function handleClick(event) {
+                    let currentDropdown = document.getElementById(option.id + "Dropdown");
+                    if (currentDropdown.style.display == "none") {
+                        currentDropdown.style.display = "block";
+                    } else{
+                        currentDropdown.style.display = "none";
+                    }
+                    console.log('Clicked on ' + option.id, event);
+                });
+
+            });
+
+            // Sets the Option Dropdowns to hidden by default
+            const optionDropdowns = document.querySelectorAll('.optionDropdown');
+            optionDropdowns.forEach(optionDropdown => {
+                optionDropdown.style.display = "none";
+            })
+            
+        </script>
+    </body>
+
+</html>
