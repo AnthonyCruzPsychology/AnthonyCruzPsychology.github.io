@@ -1,0 +1,81 @@
+---
+title: "Stringr for Data Analysis"
+author: "Anthony Cruz"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, include = TRUE)
+library(stringr)
+library(purrr)
+```
+
+When collecting data, you will often be left with many data files that need to be wrangled. One oft neglected aspect of this data wrangling is the file name; important information can be tracked within the name of a data file. Additionally, some survey respones may be stored as strings. In this short guide, I will demonstrate how I manipualte such strings in R. A through treatment of strings in R can be found in  [Haldey Wickham's R 4 Data Science](https://r4ds.had.co.nz/strings.html). I will assume you have some basic knowledge of strings moving forward.
+
+```{r loading_files, include=F, echo=F}
+
+file_names <- list.files("C:/Users/antho/Documents/Western/Minda Lab/1e. Study 4 (SONA Massed Online)/rcl4/data")
+
+```
+
+For example, here is what some file names may look like from an online experiment programmed in jsPsych:
+
+```{r}
+is <- c(1,71,131,186)
+file_names[is]
+```
+
+Each file name has the same prefix, "RCL_Study_4_-\_SONA_Only\_", and the same suffix, ".csv". Since these prefixes and suffixes are identical for each of these strings, they are redundant and can be removed for simplicity. We can do this using the *stringr::str_remove()* as follows:
+
+```{r}
+file_names_short <- file_names |>
+  str_remove("RCL_Study_4_-_SONA_Only_") |>
+  str_remove(".csv")
+file_names_short[is]
+```
+
+Next, notice that each of the file names ends in "SESSION_", followed by a data and a time. This date and time information is distinct for each file name. Since the word "SESSION" does not convey any meanignful information, we can use this to denote the start of the date and time information. We will split each string along that word using stringr::str_split() as follows:
+
+```{r}
+file_names_short_split <- file_names_short |> 
+  str_split("_SESSION_")
+file_names_short_split[is]
+```
+
+This returns a list. Each entry in the list contains two strings, the parts preceding and following the text "_SESSION_" in file_names_short. Let's extract the date and time information from one string using as.POSIXlt(), which converts the string into a convenient date-time format. We'll indciate the format using the format argument as follows:
+
+```{r}
+file_names_short_split[[1]][2] |> 
+  as.POSIXlt(format = "%Y-%m-%d_%Hh%M")
+```
+
+Since we'll be using this process on every file name, let's write that into a function:
+
+```{r}
+get_date <- function(split_name) {
+  split_name[2] |> 
+    as.POSIXlt(format = "%Y-%m-%d_%Hh%M")
+}
+get_date(file_names_short_split[[1]])
+```
+
+Next, we'll apply this function to each file name. We will use sapply to iterate across each participant:
+
+```{r}
+all_dates <- file_names_short_split |>
+  sapply(get_date)
+all_dates[is]
+```
+
+Now all the dates are grouped together in a list, so we can focus our attention on the other part of the file names. As a reminder:
+
+```{r}
+file_names_short_split[is]
+```
+
+Some of these strings have "PARTICIPANT", which indicates a participant who did not complete the entire study. As such, their study conditions and IDs have been left in the 
+
+
+
+
