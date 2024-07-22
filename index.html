@@ -223,7 +223,7 @@
                 </div>
                 <div id="connect">
                     <div id="contactLinks">
-                        <div class ="contact">Email</div>
+                        <div class ="contact" id ="email">Email</div>
                         <div class ="contact" id="linkedIn">LinkedIn</div>
                         <!-- <div class ="contact" id="mastodon">Mastodon</div> -->
                         <div class ="contact" id="cv">CV</div>
@@ -330,6 +330,10 @@
                 contact.addEventListener('mouseout', function handleStoppedHover(event) {
                     contact.setAttribute('style', 'background: rgba(79, 38, 131, 0.20);');
                 });
+            });
+
+            document.getElementById("email").addEventListener("click", () => {
+                window.location = 'mailto:acruz27@uwo.ca?subject=CogSci2024';
             });
             // document.getElementById("mastodon").addEventListener("click", () => {
             //     window.location = 'https://mastodon.social/@anthonycruz';
