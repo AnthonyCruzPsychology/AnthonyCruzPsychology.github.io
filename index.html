@@ -6,6 +6,20 @@
 
             body {background-color: #F5F5F5;}
 
+            #notice {
+                width: 90%;
+                text-align: center;
+            }
+
+                #noticeLinks {
+                    padding: 50px;
+                }
+
+                .noticeLink {
+                    text-decoration: none;
+                    margin: 20px;
+                }
+
             #container{
                 display: flex;
                 flex-wrap: wrap;
@@ -139,7 +153,7 @@
                         /* height: 185px; */
                     }
 
-                    .contact {
+                    .contact, #notice a {
                             width: 22%;
                             /* height: 44px; */
                             flex-shrink: 0;
@@ -157,7 +171,7 @@
                             /* cursor: pointer; */
                         }
 
-                        .contact:hover {
+                        .contact:hover, #notice a:hover {
                                 text-decoration: underline;
                             }
 
@@ -212,6 +226,14 @@
 
     <body>
         <div id="container">
+
+            <div id="notice">
+                <h1>CogSci 2024 Handouts</h1>
+                <div id="noticeLinks">
+                    <a class="noticeLink" href="resources/DBM Handout.pdf">Decision Bound Modeling</a>
+                    <a class="noticeLink" href="resources/JOL Handout.pdf">Judgments of Learning</a>
+                </div>
+            </div>
 
             <div id="sidebar">
                 <img src="./img.jpg">
