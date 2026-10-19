@@ -1,239 +1,215 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Anthony Cruz, MSc</title>
+        <title>Anthony Cruz | Cognition, Learning & Memory</title>
         <style>
-
-            /* Western Purple       #4F2683 */
-            /* White                       #FFFFFF */
-
-            /* Orchid           #8F55E0 */
-            /* Deep Focus           #201436 */
-            /* Black            #000000 */
-            /* Gray         #818284 */
-
-            /* Sky          #7DEAFB */
-            /* Spring         #B9F876 */
-            /* Vivid            #FCF05E */
-            /* Tiger            #F0A757 */
-
-            body {background-color: #F5F5F5;}
-
-            #notice {
-                width: 90%;
-                text-align: center;
+            :root {
+                --paper: #f8f6f2;
+                --ink: #171717;
+                --forest: #123f3b;
+                --gold: #bd8737;
+                --muted: #4c4c4c;
+                --content-width: 1220px;
             }
-
-                #noticeLinks {
-                    padding: 50px;
-                }
-
-                .noticeLink {
-                    text-decoration: none;
-                    margin: 20px;
-                }
-
-            #container{
+            * { box-sizing: border-box; }
+            html { scroll-behavior: smooth; }
+            body {
+                margin: 0;
+                background: var(--paper);
+                color: var(--ink);
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                line-height: 1.65;
+            }
+            #container {
+                display: grid;
+                grid-template-columns: minmax(240px, 0.68fr) minmax(0, 1.8fr);
+                align-items: start;
+                gap: 38px;
+                width: min(var(--content-width), calc(100% - 56px));
+                height: auto;
+                margin: 44px auto;
+            }
+            #sidebar {
+                position: sticky;
+                top: 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+                width: 100%;
+                height: auto;
+                padding: 24px 0;
+                border: 0;
+                border-radius: 0;
+                background: transparent;
+                box-shadow: none;
+            }
+            #sidebar img {
+                display: block;
+                width: 100%;
+                max-width: 250px;
+                aspect-ratio: 4 / 5;
+                height: auto;
+                object-fit: cover;
+                object-position: center;
+                border: 0;
+                border-radius: 0;
+                margin: 0 0 8px;
+            }
+            #description {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                gap: 2px;
+                text-align: left;
+            }
+            #description h1 {
+                width: 100%;
+                margin: 0 0 5px;
+                color: var(--forest);
+                font-family: Georgia, "Times New Roman", serif;
+                font-size: clamp(30px, 3vw, 38px);
+                font-weight: 700;
+                line-height: 1.12;
+                letter-spacing: -0.6px;
+                text-align: left;
+            }
+            #description p {
+                width: 100%;
+                margin: 0 0 8px;
+                color: var(--muted);
+                font-size: 17px;
+                text-align: left;
+            }
+            #description a {
+                width: auto;
+                color: var(--forest);
+                font-size: 15px;
+                line-height: 1.55;
+                text-align: left;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+            #connect { width: 100%; height: auto; margin-top: 4px; }
+            #contactLinks {
                 display: flex;
                 flex-wrap: wrap;
-                height: 500px;
-                width:100%;
-                margin-top: 25px;
-                /* margin-bottom: 100px; */
-                justify-content: center;
-                align-items: flex-start;
-                gap: 30px;
-            }
-
-            #sidebar {
-                display: flex;
-                width: 605px;
-                gap: 2%;
-                /* height: 100%; */
-                height: min-content;
-                padding: 2% 0;
-                flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
-                border: 2px solid #000;
-                background: #FFF;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                gap: 8px;
+                width: 100%;
             }
-
-                img {
-                    /* width: 120px; */
-                    /* height: 120px; */
-                    width: 40%;
-                    flex-shrink: 0;
-                    border: 1px solid black;
-                    border-radius: 50%;
-                    margin-bottom: 2%;
-                }
-
-                #description {
-                    display: flex;
-                    width: 100%;
-                    gap:0;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: baseline;
-                    align-content: center;
-                    text-align: center;
-                    color: #000;
-                    text-align: center;
-                }
-
-                    #description h1 {
-                        font-family: sans-serif;
-                        width:100%;
-                        text-align: center;
-                        font-size: 40px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height:38px;
-                        /* margin-block-start: 0; */
-                        margin-block: 0;
-                    }
-
-                    #description p {
-                        margin-block-start: 0;
-                        width: 100%;
-                        /* display:flex; */
-                        color: #807F83;
-                        text-align: center;
-                        font-family: sans-serif;
-                        font-size: 32px;
-                        /* font-style: normal; */
-                        font-weight: 400;
-                        line-height: normal;
-                    }
-                    #description a {
-                        margin-block-start: 0;
-                        width: 100%;
-                        /* display:flex; */
-                        color: #807F83;
-                        text-align: center;
-                        font-family: sans-serif;
-                        font-size: 24px;
-                        /* font-style: normal; */
-                        font-weight: 400;
-                        text-decoration: none;
-                        line-height: normal;
-                    }
-
-                    #description a:hover {
-                        text-decoration: underline;
-                    }
-
-                #connect {
-                    display: flex;
-                    flex-direction:row;
-                    -ms-flex-align: center;
-                    height: 100px;
-                    width: 100%;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 22px;
-                    flex-shrink: 0;
-                    text-align: center;
-                }
-
-                    /* #connect p {
-                        transform:  rotate(-90deg);
-                        color: #000;
-                        text-align: center;
-                        font-family: sans-serif;
-                        font-size: 32px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: normal;
-                        border-bottom: 1px solid black;
-                        width: min-content;
-                        height: min-content;
-                        text-wrap: nowrap;
-                        margin-block: 0;
-                    } */
-
-                    #contactLinks {
-                        /* transform: translateX(-25%); */
-                        display: flex;
-                        flex-direction: row;
-                        justify-content:space-evenly;
-                        /* align-items: center; */
-                        align-items: flex-start;
-                        gap: 2%;
-                        width: 100%;
-                        /* height: 185px; */
-                    }
-
-                    .contact, #notice a {
-                            width: 22%;
-                            /* height: 44px; */
-                            flex-shrink: 0;
-                            border: 1px solid #000;
-                            background: rgba(79, 38, 131, 0.20);
-                            /* color: #807F83; */
-                            color: black;
-                            text-align: center;
-                            font-family: sans-serif;
-                            font-size: 16px;
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: normal;
-                            padding: 2%;
-                            /* cursor: pointer; */
-                        }
-
-                        .contact:hover, #notice a:hover {
-                                text-decoration: underline;
-                            }
-
+            .contact, #notice a {
+                width: auto;
+                flex: 0 1 auto;
+                padding: 8px 12px;
+                border: 1px solid #c7c2b8;
+                border-radius: 2px;
+                background: transparent;
+                color: var(--forest);
+                font-size: 14px;
+                font-weight: 600;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background 150ms ease;
+            }
+            .contact:hover, #notice a:hover {
+                background: #eae4da !important;
+                text-decoration: none;
+            }
             #dropdown {
                 display: flex;
-                width: 605px;
-                min-width: min-content;
-                height: 100%;
-                min-height: min-content;
                 flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: 7%;
-                /* padding-bottom: 100px; */
+                align-items: stretch;
+                gap: 0;
+                width: 100%;
+                min-width: 0;
+                height: auto;
+                min-height: 0;
+                padding-bottom: 40px !important;
             }
-
-                .option {
-                    width: 100%;
-                    /* height: 19%; */
-                    height: min-content;
-                    flex-shrink: 0;
-                    border: 2px solid #000;
-                    background: #FFF;
-                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                    color: #000;
-                    text-align: center;
-                    vertical-align: top;
-                    font-family: sans-serif;
-                    font-size: 40px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: normal;
-                    padding: 2% 0;
-                    /* cursor: pointer; */
+            .option {
+                width: 100%;
+                height: auto;
+                padding: 17px 0 12px;
+                border: 0;
+                border-bottom: 1px solid #d7d0c6;
+                border-radius: 0;
+                background: transparent;
+                box-shadow: none;
+                color: var(--forest);
+                font-family: Georgia, "Times New Roman", serif;
+                font-size: 25px;
+                font-weight: 700;
+                line-height: 1.3;
+                text-align: left;
+                cursor: pointer;
+            }
+            .option::after {
+                content: "+";
+                float: right;
+                color: var(--gold);
+                font-family: Arial, sans-serif;
+                font-size: 22px;
+                font-weight: 400;
+            }
+            .option[aria-expanded="true"]::after { content: "−"; }
+            .option:hover {
+                color: var(--gold);
+                text-decoration: none !important;
+            }
+            .optionDropdown {
+                margin: 0;
+                padding: 18px 0 24px;
+                color: #222;
+                font-size: 16px;
+                line-height: 1.75;
+                overflow-wrap: anywhere;
+            }
+            .optionDropdown h1 {
+                margin: 24px 0 10px;
+                color: var(--forest);
+                font-family: Georgia, "Times New Roman", serif;
+                font-size: 21px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+            .optionDropdown a {
+                color: var(--forest);
+                text-underline-offset: 3px;
+            }
+            .optionDropdown ol { padding-left: 24px; }
+            #notice { width: 100%; text-align: left; }
+            @media (max-width: 760px) {
+                #container {
+                    grid-template-columns: 1fr;
+                    width: min(100% - 32px, 620px);
+                    gap: 12px;
+                    margin: 20px auto;
                 }
-
-                .optionDropdown {
-                    /* display: none; */
-                    font-family: sans-serif;
-                    font-size: 16px;
+                #sidebar {
+                    position: static;
+                    padding: 8px 0 20px;
+                    gap: 12px;
+                    border-bottom: 1px solid #d7d0c6;
                 }
-
-                .optionDropdown h1 {
-                    text-align: left;
-                    font-size: 28px;
-                    margin: 15px 0 20px;
-                    text-decoration: underline;
+                #sidebar img {
+                    width: 108px;
+                    max-width: 108px;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
                 }
-
+                #description h1 { font-size: 32px; }
+                .option { font-size: 22px; }
+                .optionDropdown { padding: 14px 0 20px; }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                html { scroll-behavior: auto; }
+                *, *::before, *::after { transition: none !important; }
+            }
         </style>
     </head>
 
@@ -255,7 +231,7 @@
             </div> -->
 
             <div id="sidebar">
-                <img src="./img.jpg">
+                <img src="./img.jpg" alt="Portrait of Anthony Cruz">
                 <div id="description">
                     <h1>Anthony Cruz</h1>
                     <p>PhD Candidate</p>
@@ -275,7 +251,7 @@
             <div id="dropdown" style="padding-bottom: 100px;">
                 <div class="option" id = "about">About Me</div>
                 <div class="optionDropdown" id="aboutDropdown">
-                    I am a fourth-year PhD Candidate at Western University in beautiful London, Ontario. I study Psychology in the <em>Cognitive, Developmental, and Brain Sciences</em> cluster with my supervisor, John Paul Minda. I use basic science to study learning, memory, and metacognition. I use behavioral and computational methods. Long-term, I hope to connect theory to practice.
+                    I am a PhD Candidate at Western University in London, Ontario. I study Psychology in the <em>Cognitive, Developmental, and Brain Sciences</em> cluster with my supervisor, John Paul Minda. I use basic science to study learning, memory, and metacognition. I use behavioral and computational methods. Long-term, I hope to connect theory to practice.
                     <br><br>
                     I am passionate about science communication. As the Managing Editor of <em>GradCast</em>, I managed a team of hardworking hosts and producers to share Western University's innovative research with the broader community. Check it out at https://gradcast.ca/. Listen to me discuss my comprehensive exam in <a href = "https://gradcastradio.podbean.com/e/444-cruz-classify-a-study-of-cognitive-categories/" target="_blank">Episode 444</a>, or listen to one of the hundreds of other episodes highlighting graduate student excellence. In my current role of Vice-President Academic of Western's Society of Graduate Students, I continue to oversee the GradCast Editorial Board as well as the Academic Committee, which puts together the Western Research Forum, Western's largest interdisciplinary graduate student conference. Find more information on the 2025 Western Research Forum <a href = "https://sogs.ca/wrf/", target="_blank">here</a>!
                     <br><br>
@@ -286,7 +262,7 @@
                 <div class="optionDropdown" id="researchDropdown">
                     Speaking broadly, I research ways to optimize inferential learning, the way that we learn to apply past experiences to understand new ones. I do this using category learning paradigms, which make it possible to differentiate between <em>retention</em> (memorization) and <em>transfer</em> (abstraction), which is necessary for inference-making.
                     <br><br>
-                    For example, one of my primary interests is metacognitive reactivity, the phenomenon wherein actively reflecting on your learning while you are still learning tends to imrpove your memory. For example, imagine that you are in a lecture; actively reflecting on how well you know the material could impact how well you pay attention to and encode it. I am building upon existing theories of metacognitive reactivity with the eventual goal of making predictions about how metacognition might impact memory and inference-making in a variety of contexts ,including educational contexts. 
+                    For example, one of my primary interests is metacognitive reactivity, the phenomenon wherein actively reflecting on your learning while you are still learning tends to improve your memory. For example, imagine that you are in a lecture; actively reflecting on how well you know the material could impact how well you pay attention to and encode it. I am building upon existing theories of metacognitive reactivity with the eventual goal of making predictions about how metacognition might impact memory and inference-making in a variety of contexts, including educational contexts. 
                     <br><br>
                     I take great interest in categorization, the cognitive process by which we sort stimuli into groups (categories) based on shared features. Categorization makes it easier to understand the world around us, breaking it down into bite-sized chunks. We are always putting things into categories, consciously and unconsciously. Some great examples include speech sounds and colors. Even though we do it all the time, we aren't born knowing how to categorize things. We learn categories throughout our lifetimes. This is at the heart of inference-making. I conduct basic-level research on how people learn new categories, asking questions like:
                     <ol>
@@ -294,7 +270,7 @@
                         <li>How does learning new categories impact the way your brain responds to things?</li>
                         <li>What are we really learning when we learn new categories; stimulus-response associations, categorization strategies, or something else entirely?</li>
                     </ol>
-                    These questions can have later applications in fields like language learning and medical training. I approach my research using behvioral and computational methods. I often use smartphone-based methods, as well, making my research more accessible to diverse participants and increasing its ecological validity relative to lab-based work.
+                    These questions can have later applications in fields like language learning and medical training. I approach my research using behavioral and computational methods. I often use smartphone-based methods, as well, making my research more accessible to diverse participants and increasing its ecological validity relative to lab-based work.
                 </div>
 
                 <div class="option" id = "publications">Peer-Reviewed Publications</div>
@@ -338,7 +314,7 @@
                     <br><br>
 
                     <h1>Workshop Presentations</h1>
-                    <strong>Cruz, A.</strong> (2024, March 9--11). Come see your brain waves with the Muse hadband! <em>Workshop presented at Inspiring Diversity in STEM</em>, London, ON.
+                    <strong>Cruz, A.</strong> (2024, March 9--11). Come see your brain waves with the Muse headband! <em>Workshop presented at Inspiring Diversity in STEM</em>, London, ON.
                     <br><br>
                     Kalra, P. & <strong>Cruz, A.</strong> (2023, December 1--3). Modern Realities of Behavioural Research. <em>Talked presented at Western University BrainHack</em>, London, ON.
                     <br><br>
@@ -407,6 +383,7 @@
 
             // Dropdown Options
             const options = document.querySelectorAll('.option');
+            options.forEach(option => option.setAttribute("aria-expanded", "false"));
             options.forEach(option => {
 
                 option.addEventListener('mouseover', function handleHover(event) {
@@ -421,8 +398,10 @@
                     let currentDropdown = document.getElementById(option.id + "Dropdown");
                     if (currentDropdown.style.display == "none") {
                         currentDropdown.style.display = "block";
-                    } else{
+                        option.setAttribute("aria-expanded", "true");
+                    } else {
                         currentDropdown.style.display = "none";
+                        option.setAttribute("aria-expanded", "false");
                     }
                     console.log('Clicked on ' + option.id, event);
                 });
